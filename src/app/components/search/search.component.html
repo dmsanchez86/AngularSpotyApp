@@ -4,14 +4,6 @@
   </div>
 </div>
 
-<div class="card-columns">
-  <div class="card" *ngFor="let artist of artists">
-    <img class="card-img-top" [src]="artist.images | noimage" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ artist.name }}</h5>
-      <p class="card-text">
-        <span class="badge badge-pill badge-primary" *ngFor="let genre of artist.genres">{{ genre }}</span>
-      </p>
-    </div>
-  </div>
+<div class="container">
+  <app-tarjeta [items]="artists"></app-tarjeta>
 </div>
