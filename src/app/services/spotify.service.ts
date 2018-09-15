@@ -14,15 +14,15 @@ export class SpotifyService {
 
   constructor(private _http: HttpClient) { }
 
-  getNewReleases() {
-    const headers = new HttpHeaders(this.headers);
+  getQuery(query: string) {
+    return this._http.get(`${this.apiUrl}${query}`, { headers: new HttpHeaders(this.headers) });
+  }
 
-    return this._http.get(`${this.apiUrl}browse/new-releases`, { headers }).pipe( map( data => data['albums'].items ));
+  getNewReleases() {
+    return this.getQuery(`browse/new-releases`).pipe( map( data => data['albums'].items ));
   }
 
   getArtist(term: string) {
-    const headers = new HttpHeaders(this.headers);
-
-    return this._http.get(`${this.apiUrl}search?q=${term}&type=artist&limit=15`, { headers }).pipe( map( data => data['artists'].items ));
+    return this.getQuery(`search?q=${term}&type=artist&limit=15`).pipe( map( data => data['artists'].items ));
   }
 }
