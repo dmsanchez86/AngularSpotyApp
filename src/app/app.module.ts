@@ -18,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 // pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
+// font awesome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,11 +31,13 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
-    TarjetaComponent
+    TarjetaComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FontAwesomeModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [],
