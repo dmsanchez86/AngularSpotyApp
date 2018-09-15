@@ -1,3 +1,17 @@
-<p>
-  search works!
-</p>
+<div class="row mb-3">
+  <div class="col">
+    <input #searchTerm type="text" (keyup)="search(searchTerm.value)" class="form-control" placeholder="Search songs...">
+  </div>
+</div>
+
+<div class="card-columns">
+  <div class="card" *ngFor="let artist of artists">
+    <img class="card-img-top" [src]="artist.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ artist.name }}</h5>
+      <p class="card-text">
+        <span class="badge badge-pill badge-primary" *ngFor="let genre of artist.genres">{{ genre }}</span>
+      </p>
+    </div>
+  </div>
+</div>
