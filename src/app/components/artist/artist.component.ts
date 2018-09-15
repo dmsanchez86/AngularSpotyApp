@@ -9,6 +9,7 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class ArtistComponent implements OnInit {
   artist: any = {};
+  loading: boolean;
 
   constructor(private _router: ActivatedRoute, private _spotifyService: SpotifyService) {
     this._router.params.subscribe( params => {
@@ -20,9 +21,11 @@ export class ArtistComponent implements OnInit {
   }
 
   getArtist(id: string) {
+    this.loading = true;
     this._spotifyService.getArtist(id)
         .subscribe( (artist: any) => {
           this.artist = artist;
+          this.loading = false;
         });
   }
 
