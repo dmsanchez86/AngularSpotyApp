@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
   apiUrl: any = 'https://api.spotify.com/v1/';
-  token: any = 'BQARxUWgO-IdR99sDTPjJGGAwOtkj5LyapdMuK0PnSkoEbm585CgO81SG4xhYGP9u64igAsqsGc9WrdXapUYJkdiM0L5WqsoKBAmvNlHxDjO_YA0Q38V1nY4lcx6m_P_Ht9SyQhK2_kjuS8';
+  token: any = 'BQAJnPLKoyXNL38IM3uW_afsfWkD3k1Ll-VkgxoHcSHEOb8r7JXhB99Ij5gVMfQf-Qxy3K0JRuxXcKugzJjZyuTUz_6OQj2oYVRrn7vi8TUgdhrwhtFJJbiBJqGOxRpIQtOD2CTDsc7ryms';
   headers: any = {
       'Authorization': `Bearer ${this.token}`
   };
