@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
   apiUrl: any = 'https://api.spotify.com/v1/';
-  token: any = 'BQDCYg6G-YkyCemIv0UIKsjs-0ksg39l7ih6a7Ie4aqoFDQmQE9qzbz9jNDhh63rkNoJf2AR2KvEEYKwiSKKb_Yh74HpURgSvBLf-n1wVIHKgpWSVrimFNtqKDsKaz3gRd9mitk05i4NJFY';
+  token: any = 'BQBKbSwIB3c9qEI0pPnCG_YMlBuFO7aLyvJIv3d4wqFIBArFq4Fp1Q9TmufDQcwkSVvba2yK--93lFM8qfGHafOcTqTBE8WSi8_b0iZODtRbRx7495B-leFBVjgr6tiUHKF2moYdCS6fMEw';
   headers: any = {
       'Authorization': `Bearer ${this.token}`
   };
@@ -28,5 +28,9 @@ export class SpotifyService {
 
   getArtist(id: string) {
     return this.getQuery(`artists/${id}`);
+  }
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=co`).pipe( map( data => data['tracks'] ));
   }
 }
