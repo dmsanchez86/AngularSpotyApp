@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 // rutas
 import { ROUTES } from './app.routes';
@@ -17,8 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
-import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomSeguroPipe } from './pipes/domseguro.pipe';
 
 // font awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,6 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
+    DomSeguroPipe,
     TarjetaComponent,
     LoadingComponent
   ],
